@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Objects;
 
 public class Cache<K, V> {
-    private final long capacity;
+    private final int capacity;
     private final Map<K, Node<K, V>> cacheStorage;
     private final Node<K, V> head;
     private TrimStrategy trimStrategy;
@@ -50,7 +50,7 @@ public class Cache<K, V> {
     }
 
     public Cache(Strategy strategy, int capacity) {
-        final long MIN_CAPACITY = 3;
+        final int MIN_CAPACITY = 3;
 
         if(capacity < MIN_CAPACITY) {
             this.capacity = MIN_CAPACITY;
